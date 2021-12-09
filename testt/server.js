@@ -7,7 +7,7 @@ app.get("/api", (req, res, next) => {
 });
 
 app.get("/api-proxy", async (req, res, next) => {
-  const response = await axios.get("http://testt2.dev.localhost/api");
+  const response = await axios.get("http://testt2.dev.localhost:3001/api");
   response.data.proxy = true;
   res.json(response.data);
 });
