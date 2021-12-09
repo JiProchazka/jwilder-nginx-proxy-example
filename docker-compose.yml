@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  nginx-proxy:
+    container_name: proxy
+    image: jwilder/nginx-proxy
+    network_mode: bridge
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - testt
+
+  webserver1:
+    container_name: testt.dev.localhost
+    image: node:lts
+    working_dir: /var/www/html/app/
+    entrypoint: /bin/bash
+    expose:
+      - 80
+    environment:
+      - VIRTUAL_HOST=testt.dev.localhost
+    tty: true
+    volumes:
+      - ./testt/:/var/www/html/app
+    networks:
+      - testt
+
+  webserver2:
+    container_name: testt2.dev.localhost
+    image: node:lts
+    working_dir: /var/www/html/app/
+    entrypoint: /bin/bash
+    expose:
+      - 80
+    environment:
+      - VIRTUAL_HOST=testt2.dev.localhost
+    tty: true
+    volumes:
+      - ./testt2/:/var/www/html/app
+    networks:
+      - testt
+
+networks:
+  testt:
+    external: true
