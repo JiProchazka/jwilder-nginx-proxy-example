@@ -21,6 +21,7 @@ services:
       - 3000
     environment:
       - VIRTUAL_HOST=testt.dev.localhost
+      - VIRTUAL_PORT=3000
     tty: true
     volumes:
       - ./testt/:/var/www/html/app
@@ -36,6 +37,7 @@ services:
       - 3001
     environment:
       - VIRTUAL_HOST=testt2.dev.localhost
+      - VIRTUAL_PORT=3001
     tty: true
     volumes:
       - ./testt2/:/var/www/html/app
