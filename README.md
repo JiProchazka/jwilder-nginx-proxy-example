@@ -1,5 +1,8 @@
 # Instructions
 
+This is the demonstration of reverse proxy using [jwilder/nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy).  
+Two NodeJS apps are running on ports `3000` and `3001`.
+
 ### HOSTS file
 
 Put `127.0.0.1 testt.dev.localhost testt2.dev.localhost` to a HOSTS file (on Windows 10: `C:\Windows\System32\drivers\etc\hosts`)

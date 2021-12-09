@@ -18,7 +18,7 @@ services:
     working_dir: /var/www/html/app/
     entrypoint: /bin/bash
     expose:
-      - 80
+      - 3000
     environment:
       - VIRTUAL_HOST=testt.dev.localhost
     tty: true
@@ -33,7 +33,7 @@ services:
     working_dir: /var/www/html/app/
     entrypoint: /bin/bash
     expose:
-      - 80
+      - 3001
     environment:
       - VIRTUAL_HOST=testt2.dev.localhost
     tty: true
